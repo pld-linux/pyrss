@@ -15,9 +15,9 @@ PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	daemon
 Requires:	jabber-common
-Requires:	python-pyxmpp
-Requires:	python-feedparser
 Requires:	python-MySQLdb
+Requires:	python-feedparser
+Requires:	python-pyxmpp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,8 +33,6 @@ przekierowuje te nowe wiadomo¶ci jako wiadomo¶ci Jabbera.
 
 %prep
 %setup -qn pyrss
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT

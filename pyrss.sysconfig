@@ -1,0 +1,5 @@
+# Customized setings for PyRSS
+
+# Define nice level for PyRSS
+SERVICE_RUN_NICE_LEVEL="+5"
+

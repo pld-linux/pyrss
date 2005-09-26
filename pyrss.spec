@@ -1,13 +1,12 @@
 Summary:	PyRSS - headline delivery for Jabber
 Summary(pl):	PyRSS - dostarczanie skrótów wiadomo¶ci do Jabbera
 Name:		pyrss
-Version:	0.9.6
-Release:	0.20050203.1
+Version:	0.9.9.1
+Release:	1
 License:	GPL
 Group:		Applications/Communications
-#Source0:	http://jabberstudio.org/projects/pyrss/releases/%{name}-%{version}.tar.bz2
-Source0:	http://ep09.pld-linux.org/~mmazur/misc/%{name}-%{version}-20050203.tar.bz2
-# Source0-md5:	b50f6b4535f9f0a932a7e7e852ed0904
+Source0:	http://files.jabberstudio.org/pyrss/%{name}-%{version}.tar.bz2
+# Source0-md5:	3f48f3b7f36c2c588b8d55a5841482ab
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://pyrss.jabberstudio.org/
@@ -32,7 +31,7 @@ zgodnie z zainteresowaniami u¿ytkownika (indywidualn± prenumerat±),
 przekierowuje te nowe wiadomo¶ci jako wiadomo¶ci Jabbera.
 
 %prep
-%setup -qn pyrss
+%setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -73,7 +72,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO pyrss.sql
+%doc AUTHORS ChangeLog README TODO pyrss.sql contrib
 %attr(755,root,root) %{_sbindir}/*
 %attr(640,root,jabber) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/jabber/pyrss.xml
 %attr(754,root,root) /etc/rc.d/init.d/pyrss

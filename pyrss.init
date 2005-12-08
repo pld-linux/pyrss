@@ -1,6 +1,6 @@
 #!/bin/sh
 # PyRSS - Jabber headlines service
-# 
+#
 # chkconfig:	345 85 05
 # description:	PyRSS - Jabber headlines service
 

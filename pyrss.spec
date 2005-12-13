@@ -10,13 +10,13 @@ Source0:	http://files.jabberstudio.org/pyrss/%{name}-%{version}.tar.bz2
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://pyrss.jabberstudio.org/
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	daemon
 Requires:	jabber-common
 Requires:	python-MySQLdb
 Requires:	python-feedparser
 Requires:	python-pyxmpp
+Requires:	rc-scripts
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,8 +26,8 @@ according to user's interests (individual source subscriptions),
 forwards those new items as Jabber messages.
 
 %description -l pl
-PyRSS odczytuje szereg ¼róde³ (plików RSS lub Atom w sieci) i,
-zgodnie z zainteresowaniami u¿ytkownika (indywidualn± prenumerat±),
+PyRSS odczytuje szereg ¼róde³ (plików RSS lub Atom w sieci) i, zgodnie
+z zainteresowaniami u¿ytkownika (indywidualn± prenumerat±),
 przekierowuje te nowe wiadomo¶ci jako wiadomo¶ci Jabbera.
 
 %prep
@@ -74,6 +74,6 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO pyrss.sql contrib
 %attr(755,root,root) %{_sbindir}/*
-%attr(640,root,jabber) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/jabber/pyrss.xml
+%attr(640,root,jabber) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/jabber/pyrss.xml
 %attr(754,root,root) /etc/rc.d/init.d/pyrss
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/pyrss
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/pyrss

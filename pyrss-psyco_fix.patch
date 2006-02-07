@@ -1,0 +1,13 @@
+Common subdirectories: pyrss-0.9.9.1.orig/contrib and pyrss-0.9.9.1/contrib
+diff -u pyrss-0.9.9.1.orig/pyrss.py pyrss-0.9.9.1/pyrss.py
+--- pyrss-0.9.9.1.orig/pyrss.py	2005-08-30 21:54:40.000000000 +0200
++++ pyrss-0.9.9.1/pyrss.py	2006-02-07 19:07:43.489002000 +0100
+@@ -13,7 +13,7 @@
+ try: 
+     import psyco
+     psyco.full()
+-finally:
++except:
+     pass
+ from optparse import OptionParser
+ import sys

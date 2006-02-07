@@ -9,6 +9,7 @@ Source0:	http://files.jabberstudio.org/pyrss/%{name}-%{version}.tar.bz2
 # Source0-md5:	3f48f3b7f36c2c588b8d55a5841482ab
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
+Patch0:		%{name}-psyco_fix.patch
 URL:		http://pyrss.jabberstudio.org/
 Requires(post,preun):	/sbin/chkconfig
 Requires:	daemon
@@ -32,6 +33,7 @@ przekierowuje te nowe wiadomo¶ci jako wiadomo¶ci Jabbera.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

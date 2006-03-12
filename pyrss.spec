@@ -11,6 +11,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-psyco_fix.patch
 URL:		http://pyrss.jabberstudio.org/
+Requires(post):	sed >= 4.0
 Requires(post,preun):	/sbin/chkconfig
 Requires:	daemon
 Requires:	jabber-common
@@ -49,26 +50,20 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/pyrss
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if [ -f /etc/jabber/secret ] ; then
-	SECRET=`cat /etc/jabber/secret`
+if [ -f %{_sysconfdir}/jabber/secret ] ; then
+	SECRET=`cat %{_sysconfdir}/jabber/secret`
 	if [ -n "$SECRET" ] ; then
-        	echo "Updating component authentication secret in pyrss.xml..."
-		perl -pi -e "s/'>password<'/'>$SECRET<'/" /etc/jabber/pyrss.xml
+		echo "Updating component authentication secret in pyrss.xml..."
+		%{__sed} -i -e "s/'>password<'/'>$SECRET<'/" /etc/jabber/pyrss.xml
 	fi
 fi
 
 /sbin/chkconfig --add pyrss
-if [ -r /var/lock/subsys/pyrss ]; then
-	/etc/rc.d/init.d/pyrss restart >&2
-else
-	echo "Run \"/etc/rc.d/init.d/pyrss start\" to start PyRSS."
-fi
+%service pyrss restart "PyRSS"
 
 %preun
 if [ "$1" = "0" ]; then
-	if [ -r /var/lock/subsys/pyrss ]; then
-		/etc/rc.d/init.d/pyrss stop >&2
-	fi
+	%service pyrss stop
 	/sbin/chkconfig --del pyrss
 fi
 

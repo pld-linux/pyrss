@@ -2,7 +2,7 @@ Summary:	PyRSS - headline delivery for Jabber
 Summary(pl):	PyRSS - dostarczanie skrótów wiadomo¶ci do Jabbera
 Name:		pyrss
 Version:	0.9.9.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://files.jabberstudio.org/pyrss/%{name}-%{version}.tar.bz2

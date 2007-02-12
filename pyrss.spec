@@ -1,5 +1,5 @@
 Summary:	PyRSS - headline delivery for Jabber
-Summary(pl):	PyRSS - dostarczanie skrÛtÛw wiadomo∂ci do Jabbera
+Summary(pl.UTF-8):   PyRSS - dostarczanie skr√≥t√≥w wiadomo≈õci do Jabbera
 Name:		pyrss
 Version:	0.9.9.1
 Release:	2
@@ -27,10 +27,10 @@ PyRSS polls a series of sources (RSS or Atom file on the web), and,
 according to user's interests (individual source subscriptions),
 forwards those new items as Jabber messages.
 
-%description -l pl
-PyRSS odczytuje szereg ºrÛde≥ (plikÛw RSS lub Atom w sieci) i, zgodnie
-z zainteresowaniami uøytkownika (indywidualn± prenumerat±),
-przekierowuje te nowe wiadomo∂ci jako wiadomo∂ci Jabbera.
+%description -l pl.UTF-8
+PyRSS odczytuje szereg ≈∫r√≥de≈Ç (plik√≥w RSS lub Atom w sieci) i, zgodnie
+z zainteresowaniami u≈ºytkownika (indywidualnƒÖ prenumeratƒÖ),
+przekierowuje te nowe wiadomo≈õci jako wiadomo≈õci Jabbera.
 
 %prep
 %setup -q

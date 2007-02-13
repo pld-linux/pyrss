@@ -1,5 +1,5 @@
 Summary:	PyRSS - headline delivery for Jabber
-Summary(pl.UTF-8):   PyRSS - dostarczanie skrótów wiadomości do Jabbera
+Summary(pl.UTF-8):	PyRSS - dostarczanie skrótów wiadomości do Jabbera
 Name:		pyrss
 Version:	0.9.9.1
 Release:	2
